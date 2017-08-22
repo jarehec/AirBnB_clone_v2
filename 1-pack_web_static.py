@@ -11,7 +11,7 @@ def do_pack():
     print("Packing web_static to {}".format(file))
     try:
         local("mkdir -p versions")
-        local("tar -cvzf {} /data/web_static".format(file))
+        local("tar -cvzf {} web_static".format(file))
         return ("{}".format(file))
     except:
         return None
