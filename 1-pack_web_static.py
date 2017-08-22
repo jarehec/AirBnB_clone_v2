@@ -8,5 +8,9 @@ import datetime
 def do_pack():
     date = str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
     run("mkdir -p versions")
-    run("tar -cvzf versions/web_static_{}.tgz /data/web_static".format(date))
-    return ("versions/web_static_{}.tgz".format(date))
+    try:
+        run("tar -cvzf versions/web_static_{}.tgz /data/web_static"
+            .format(date))
+        return ("versions/web_static_{}.tgz".format(date))
+    except:
+        return None
