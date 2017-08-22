@@ -7,10 +7,11 @@ import datetime
 
 def do_pack():
     date = str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
-    local("mkdir -p versions")
+    file = "versions/web_static_{}.tgz".format(date)
+    print("Packing web_static to {}".format(file))
     try:
-        local("tar -cvzf versions/web_static_{}.tgz /data/web_static"
-              .format(date))
-        return ("versions/web_static_{}.tgz".format(date))
+        local("mkdir -p versions")
+        local("tar -cvzf {} /data/web_static".format(file))
+        return ("{}".format(file))
     except:
         return None
