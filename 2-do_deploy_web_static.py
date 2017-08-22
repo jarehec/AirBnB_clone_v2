@@ -12,8 +12,7 @@ def do_deploy(archive_path):
     if archive_path is None:
         return False
     try:
-        with cd("/tmp"):
-            put("versions/{}".format(archive_path), "/tmp/{}".format(archive_path))
+        put("versions/{}".format(archive_path), "/tmp/{}".format(archive_path))
         run("tar -xzf {} -C /data/web_static/releases/{}"
             .format(archive_path, archive_path[:-4]))
         run("rm -f {}".format(archive_path))
