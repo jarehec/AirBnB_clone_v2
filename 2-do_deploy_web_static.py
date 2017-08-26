@@ -25,7 +25,6 @@ def do_deploy(archive_path):
         run("rm -rf /data/web_static/current")
         run("ln -s /data/{}/{} /data/{}/current"
             .format(ws_rs, filename[:-4], ws))
-    except Exception as e:
-        print(e)
+    except e:
         return False
     return True
