@@ -4,7 +4,7 @@ import datetime
 """distributes an archive to the web servers
 """
 
-env.hosts = ['34.206.234.184:35382', '34.206.234.184:35386']
+env.hosts = ['66.70.184.235', '34.229.113.91']
 
 
 def do_deploy(archive_path):
