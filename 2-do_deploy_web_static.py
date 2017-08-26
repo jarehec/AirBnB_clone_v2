@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from fabric.api import local, run, put, env
 import datetime
+import os.path
 """distributes an archive to the web servers
 """
 
@@ -8,7 +9,7 @@ env.hosts = ['66.70.184.235', '34.229.113.91']
 
 
 def do_deploy(archive_path):
-    if archive_path is None:
+    if not os.path.exists(archive_path):
         return False
     ws_rs = "web_static/releases"
     ws = "web_static"
