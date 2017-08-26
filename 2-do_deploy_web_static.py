@@ -21,6 +21,7 @@ def do_deploy(archive_path):
         run("rm /tmp/{}".format(filename))
         run("mv /data/{}/{}/{}/* /data/{}/{}"
             .format(ws_rs, filename[:-4], ws, ws_rs, filename[:-4]))
+        run("rm -rf /data/{}/{}/{}".format(ws_rs, filename[:-4], ws))
         run("rm -rf /data/web_static/current")
         run("ln -s /data/{}/{} /data/{}/current"
             .format(ws_rs, filename[:-4], ws))
