@@ -2,7 +2,8 @@
 """
 """
 
-from web_flask import app, render_template
+from flask import Flask, render_template
+app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
