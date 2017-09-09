@@ -140,6 +140,20 @@ class HBNBCommand(cmd.Cmd):
                     my_obj.save()
                     print(my_obj.id)
 
+    def do_all_cities(self, arg):
+        """
+        displays all City objects linked to the current State
+        all_cities [State]
+        """
+        print("arg: {}".format(arg))
+        print("FS_all: {}".format(storage.all()))
+        print("\n\n\n")
+        for k, v in storage.all().items():
+            print("KEY: {}".format(k))
+            print("VALUES: {}".format(v))
+        
+        	
+
     def do_show(self, arg):
         """show: show [ARG] [ARG1]
         ARG = Class
